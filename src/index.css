@@ -98,15 +98,22 @@ body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
   color: hsl(var(--clr-white));
-  background-color: hsl(var(--clr-light));
   /* background-color: hsl(var(--clr-dark)); */
   line-height: 1.5;
   min-height: 100vh;
+  /* display: grid;
+  grid-template-rows: min-content 1fr; */
+  overflow-x: hidden;
+}
 
+.home,
+.destination,
+.crew,
+.technology {
+  min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
-
-  overflow-x: hidden;
+  background-color: hsl(var(--clr-dark));
 }
 
 /* make images easier to work with */
@@ -409,7 +416,7 @@ select {
     right: 1rem;
     top: 2rem;
     background: transparent;
-    background-image: url(./assets/shared/icon-hamburger.svg);
+    background-image: url(../public/assets/shared/icon-hamburger.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 1.5rem;
@@ -418,7 +425,7 @@ select {
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./assets/shared/icon-close.svg);
+    background-image: url(../public/assets/shared/icon-close.svg);
   }
 
   .mobile-nav-toggle:focus-visible {
@@ -464,8 +471,17 @@ select {
   cursor: pointer;
   padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
-  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+  /* border-bottom: 0.2rem solid hsl(var(--clr-white) / 0); */
   background-color: transparent;
+}
+
+.underline-indicators li a {
+  padding: var(--underline-gap, 0.5rem) 0;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.underline-indicators > button {
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
 }
 
 .underline-indicators > *:hover,
@@ -473,11 +489,16 @@ select {
   border-color: hsl(var(--clr-white) / 0.5);
 }
 
-.underline-indicators > .active,
+.underline-indicators .active,
 .underline-indicators > [aria-selected="true"] {
   color: hsl(var(--clr-white) / 1);
   border-color: hsl(var(--clr-white) / 1);
 }
+/* .underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: hsl(var(--clr-white) / 1);
+  border-color: hsl(var(--clr-white) / 1);
+} */
 
 .tab-list {
   --gap: 2rem;
@@ -551,80 +572,89 @@ select {
 /* ----------------------------- */
 /* Page specific background      */
 /* ----------------------------- */
-body {
+
+/* body {
   background-size: cover;
   background-position: bottom center;
-}
+} */
+
 /* home */
 .home {
-  background-image: url(./assets/home/background-home-mobile.jpg);
+  background-image: url(../public/assets/home/background-home-mobile.jpg);
+  background-size: cover;
+  background-position: bottom center;
 }
 
 @media (min-width: 35rem) {
   .home {
     background-position: center center;
-    background-image: url(./assets/home/background-home-tablet.jpg);
+    background-image: url(../public/assets/home/background-home-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
   .home {
-    background-image: url(./assets/home/background-home-desktop.jpg);
+    background-image: url(../public/assets/home/background-home-desktop.jpg);
   }
 }
 
 /* destination */
 .destination {
-  background-image: url(./assets/destination/background-destination-mobile.jpg);
+  background-image: url(../public/assets/destination/background-destination-mobile.jpg);
+  background-size: cover;
+  background-position: bottom center;
 }
 
 @media (min-width: 35rem) {
   .destination {
     background-position: center center;
-    background-image: url(./assets/destination/background-destination-tablet.jpg);
+    background-image: url(../public/assets/destination/background-destination-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
   .destination {
-    background-image: url(./assets/destination/background-destination-desktop.jpg);
+    background-image: url(../public/assets/destination/background-destination-desktop.jpg);
   }
 }
 
 /* crew */
 .crew {
-  background-image: url(./assets/crew/background-crew-mobile.jpg);
+  background-image: url(../public/assets/crew/background-crew-mobile.jpg);
+  background-size: cover;
+  background-position: bottom center;
 }
 
 @media (min-width: 35rem) {
   .crew {
     background-position: center center;
-    background-image: url(./assets/crew/background-crew-tablet.jpg);
+    background-image: url(../public/assets/crew/background-crew-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
   .crew {
-    background-image: url(./assets/crew/background-crew-desktop.jpg);
+    background-image: url(../public/assets/crew/background-crew-desktop.jpg);
   }
 }
 
 /* technology */
 .technology {
   background-position: top right;
-  background-image: url(./assets/technology/background-technology-mobile.jpg);
+  background-image: url(../public/assets/technology/background-technology-mobile.jpg);
+  background-size: cover;
 }
 
 @media (min-width: 35rem) {
   .technology {
     background-position: center center;
-    background-image: url(./assets/technology/background-technology-tablet.jpg);
+    background-image: url(../public/assets/technology/background-technology-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
   .technology {
-    background-image: url(./assets/technology/background-technology-desktop.jpg);
+    background-image: url(../public/assets/technology/background-technology-desktop.jpg);
   }
 }
 

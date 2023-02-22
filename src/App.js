@@ -13,9 +13,9 @@ function App() {
       element: <RootLayout />,
       children: [
         { index: true, element: <HomePage /> },
-        { path: "destination", element: <DestinationPage /> },
-        { path: "crew", element: <CrewPage /> },
-        { path: "technology", element: <TechnologyPage /> },
+        { path: "/destination", element: <DestinationPage /> },
+        { path: "/crew", element: <CrewPage /> },
+        { path: "/technology", element: <TechnologyPage /> },
       ],
     },
   ]);
