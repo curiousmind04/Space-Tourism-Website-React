@@ -123,6 +123,10 @@ picture {
   display: block;
 }
 
+picture[hidden] {
+  display: none;
+}
+
 /* make form elements easier to work with */
 input,
 button,
